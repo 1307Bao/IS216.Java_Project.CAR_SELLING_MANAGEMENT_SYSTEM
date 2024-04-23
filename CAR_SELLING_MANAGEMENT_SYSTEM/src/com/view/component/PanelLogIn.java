@@ -7,6 +7,7 @@ import com.view.swing.TextField;
 import java.awt.Color;
 import java.awt.Cursor;
 import java.awt.Font;
+import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -22,12 +23,12 @@ public class PanelLogIn extends javax.swing.JPanel {
     private MigLayout layout;
     private ActionListener ac;
     
-    public PanelLogIn() {
+    public PanelLogIn(ActionListener cmdForget) {
         initComponents();
-        init();
+        init(cmdForget);
     }
     
-    private void init(){
+    private void init(ActionListener cmdForget){
         layout = new MigLayout("wrap", "push[CENTER]push", "push[]20[]20[]10[]30[]push");
         this.setLayout(layout);
         DN = new JLabel("Đăng nhập");
@@ -48,6 +49,7 @@ public class PanelLogIn extends javax.swing.JPanel {
         forPass.setFont(new Font("sansserif", 0, 12));
         forPass.setForeground(Color.WHITE);
         forPass.setCursor(new Cursor(Cursor.HAND_CURSOR));
+        forPass.addActionListener(cmdForget);
         this.add(forPass);
         signIn = new Button();
         signIn.setText("Đăng nhập");
@@ -67,11 +69,11 @@ public class PanelLogIn extends javax.swing.JPanel {
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGap(0, 570, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGap(0, 359, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
 

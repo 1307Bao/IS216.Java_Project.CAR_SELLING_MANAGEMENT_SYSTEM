@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
-<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JPanelFormInfo">
+<Form version="1.9" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JPanelFormInfo">
   <AuxValues>
     <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
     <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
@@ -40,13 +40,16 @@
           <Color blue="d7" green="ee" red="fb" type="rgb"/>
         </Property>
       </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_SerializeTo" type="java.lang.String" value="PanelVerifyMail_roundPanel2"/>
+      </AuxValues>
 
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
-                  <Component id="textField1" min="-2" pref="291" max="-2" attributes="0"/>
+                  <Component id="emailText" min="-2" pref="291" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
               </Group>
               <Group type="102" alignment="1" attributes="0">
@@ -69,7 +72,7 @@
                   <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
                   <Component id="label1" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
-                  <Component id="textField1" min="-2" max="-2" attributes="0"/>
+                  <Component id="emailText" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="button1" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -81,9 +84,9 @@
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="com.view.swing.TextField" name="textField1">
+        <Component class="com.view.swing.TextField" name="emailText">
           <AuxValues>
-            <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="textField1.setText(&quot;&quot;);&#xa;textField1.setHint(&quot;Email&quot;);"/>
+            <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="emailText.setText(&quot;&quot;);&#xa;emailText.setHint(&quot;Email&quot;);"/>
           </AuxValues>
         </Component>
         <Component class="java.awt.Label" name="label1">
@@ -94,6 +97,9 @@
             </Property>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Dialog" size="24" style="1"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="4f" green="6f" red="86" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Nh&#x1ead;p Email x&#xe1;c th&#x1ef1;c c&#x1ee7;a b&#x1ea1;n"/>
           </Properties>

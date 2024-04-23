@@ -5,8 +5,12 @@
 package com.view.login;
 
 import com.view.component.PanelLogIn;
+import com.view.component.PanelVerifyMail;
 import com.view.component.RoundPanelImageLogin;
 import java.awt.Color;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.JLayeredPane;
 import javax.swing.JPanel;
 import net.miginfocom.swing.MigLayout;
 
@@ -19,6 +23,7 @@ public class LogInForm extends javax.swing.JFrame {
     private MigLayout layout;
     private RoundPanelImageLogin roundPanel;
     private PanelLogIn panelLogin;
+    private PanelVerifyMail verifyMail;
     private final double coverSize = 55;
     private final double loginSize = 45;
     
@@ -28,10 +33,21 @@ public class LogInForm extends javax.swing.JFrame {
     }
     
     private void init(){
+        verifyMail= new PanelVerifyMail();
+        ActionListener cmdForget = new ActionListener(){
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                verifyMail.setVisible(true);
+            }
+        };
+        
         layout = new MigLayout("fill, insets 0");
         roundPanel = new RoundPanelImageLogin();
-        panelLogin = new PanelLogIn();
+        panelLogin = new PanelLogIn(cmdForget);
         bg.setLayout(layout);
+        bg.setLayer(verifyMail, JLayeredPane.POPUP_LAYER);
+        bg.add(verifyMail, "pos 0 0 100% 100%");
         bg.add(roundPanel, "width " + coverSize + "%, pos 0al 0 n 100%");
         bg.add(panelLogin, "width " + loginSize + "%, pos 1al 0 n 100%");
 
@@ -41,11 +57,12 @@ public class LogInForm extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        bg = new javax.swing.JPanel();
+        bg = new javax.swing.JLayeredPane();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         bg.setBackground(new java.awt.Color(94, 68, 33));
+        bg.setOpaque(true);
 
         javax.swing.GroupLayout bgLayout = new javax.swing.GroupLayout(bg);
         bg.setLayout(bgLayout);
@@ -62,14 +79,15 @@ public class LogInForm extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(bg, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(bg)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(bg, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(bg)
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     /**
@@ -108,6 +126,6 @@ public class LogInForm extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel bg;
+    private javax.swing.JLayeredPane bg;
     // End of variables declaration//GEN-END:variables
 }
