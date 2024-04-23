@@ -8,6 +8,7 @@ import java.awt.AlphaComposite;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
+import java.awt.event.MouseAdapter;
 
 /**
  *
@@ -21,7 +22,12 @@ public class PanelVerifyMail extends javax.swing.JPanel {
     public PanelVerifyMail() {
         initComponents();
         setOpaque(false);
+        setFocusable(true);
+        setFocusCycleRoot(true);
         super.setVisible(false);
+        addMouseListener(new MouseAdapter(){
+            
+        });
     }
     
     @Override
@@ -34,14 +40,14 @@ public class PanelVerifyMail extends javax.swing.JPanel {
         }
     }
     
-//    @Override
-//    protected void paintComponent(Graphics grphcs) {
-//        Graphics2D g2 = (Graphics2D) grphcs;
-//        g2.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, 0.5f));
-//        g2.fillRect(0, 0, getWidth(), getHeight());
-//        g2.setComposite(AlphaComposite.SrcOver);
-//        super.paintComponent(grphcs);
-//    }
+    @Override
+    protected void paintComponent(Graphics grphcs) {
+        Graphics2D g2 = (Graphics2D) grphcs;
+        g2.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, 0.5f));
+        g2.fillRect(0, 0, getWidth(), getHeight());
+        g2.setComposite(AlphaComposite.SrcOver);
+        super.paintComponent(grphcs);
+    }
     
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -120,16 +126,16 @@ public class PanelVerifyMail extends javax.swing.JPanel {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(80, 80, 80)
+                .addContainerGap(80, Short.MAX_VALUE)
                 .addComponent(roundPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 408, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(80, 80, 80))
+                .addContainerGap(80, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(51, 51, 51)
+                .addContainerGap(51, Short.MAX_VALUE)
                 .addComponent(roundPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(50, 50, 50))
+                .addContainerGap(50, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
