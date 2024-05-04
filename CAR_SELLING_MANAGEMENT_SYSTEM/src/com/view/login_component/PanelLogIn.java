@@ -1,5 +1,5 @@
 
-package com.view.component;
+package com.view.login_component;
 
 import com.view.swing.Button;
 import com.view.swing.PasswordField;

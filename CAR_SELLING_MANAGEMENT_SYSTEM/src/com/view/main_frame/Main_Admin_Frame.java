@@ -1,98 +1,72 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
-package com.view.login;
 
-import com.view.component.PanelLogIn;
-import com.view.component.PanelVerifyMail;
-import com.view.component.RoundPanelImageLogin;
-import java.awt.Color;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import javax.swing.JLayeredPane;
-import javax.swing.JPanel;
+package com.view.main_frame;
+
+import com.view.admin_component.HeaderAdmin;
+import com.view.admin_component.MenuAdmin;
+import com.view.form.AdminForm;
 import net.miginfocom.swing.MigLayout;
 
-/**
- *
- * @author 7713b
- */
-public class LogInForm extends javax.swing.JFrame {
+public class Main_Admin_Frame extends javax.swing.JFrame {
 
+    private MenuAdmin menu;
+    private HeaderAdmin header;
+    private AdminForm adminForm;
     private MigLayout layout;
-    private RoundPanelImageLogin roundPanel;
-    private PanelLogIn panelLogin;
-    private PanelVerifyMail verifyMail;
-    private final double coverSize = 55;
-    private final double loginSize = 45;
     
-    public LogInForm() {
+    public Main_Admin_Frame() {
         initComponents();
         init();
     }
+
     
     private void init(){
-        verifyMail= new PanelVerifyMail();
-        ActionListener cmdForget = new ActionListener(){
-
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                verifyMail.setVisible(true);
-            }
-        };
-        
-        layout = new MigLayout("fill, insets 0");
-        roundPanel = new RoundPanelImageLogin();
-        panelLogin = new PanelLogIn(cmdForget);
+        layout = new MigLayout("fill", "0[]0[100%, fill]0", "0[fill, top]0");
         bg.setLayout(layout);
-        bg.setLayer(verifyMail, JLayeredPane.POPUP_LAYER);
-        bg.add(verifyMail, "pos 0 0 100% 100%");
-        bg.add(roundPanel, "width " + coverSize + "%, pos 0al 0 n 100%");
-        bg.add(panelLogin, "width " + loginSize + "%, pos 1al 0 n 100%");
-
+        menu = new MenuAdmin();
+        header = new HeaderAdmin();
+        adminForm = new AdminForm();
+        bg.add(menu, "w 230!, spany 2");
+        bg.add(header, "h 50!, wrap");
+        bg.add(adminForm, "w 100%, h 100%");
     }
-
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        bg = new javax.swing.JLayeredPane();
+        bg = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        bg.setBackground(new java.awt.Color(94, 68, 33));
-        bg.setOpaque(true);
+        bg.setBackground(new java.awt.Color(255, 255, 255));
 
         javax.swing.GroupLayout bgLayout = new javax.swing.GroupLayout(bg);
         bg.setLayout(bgLayout);
         bgLayout.setHorizontalGroup(
             bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 861, Short.MAX_VALUE)
+            .addGap(0, 855, Short.MAX_VALUE)
         );
         bgLayout.setVerticalGroup(
             bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 527, Short.MAX_VALUE)
+            .addGap(0, 476, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(bg)
+            .addComponent(bg, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(bg)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(bg, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(0, 0, 0))
         );
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -107,25 +81,25 @@ public class LogInForm extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(LogInForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Main_Admin_Frame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(LogInForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Main_Admin_Frame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(LogInForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Main_Admin_Frame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(LogInForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Main_Admin_Frame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new LogInForm().setVisible(true);
+                new Main_Admin_Frame().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLayeredPane bg;
+    private javax.swing.JPanel bg;
     // End of variables declaration//GEN-END:variables
 }
