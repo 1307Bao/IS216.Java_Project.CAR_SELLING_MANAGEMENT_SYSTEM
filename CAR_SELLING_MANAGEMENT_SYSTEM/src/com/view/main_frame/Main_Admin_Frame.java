@@ -1,34 +1,117 @@
 
 package com.view.main_frame;
 
+import com.event.EventAdminMenuSelected;
 import com.view.admin_component.HeaderAdmin;
 import com.view.admin_component.MenuAdmin;
-import com.view.form.AdminForm;
+import com.view.form.AdminHDForm;
+import com.view.form.AdminLSCForm;
+import com.view.form.AdminNVForm;
+import com.view.form.AdminPKForm;
+import com.view.form.AdminSPForm;
+import com.view.form.AdminTKForm;
+import com.view.form.MainForm;
+import java.awt.BorderLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import net.miginfocom.swing.MigLayout;
+import org.jdesktop.animation.timing.Animator;
+import org.jdesktop.animation.timing.TimingTarget;
+import org.jdesktop.animation.timing.TimingTargetAdapter;
 
 public class Main_Admin_Frame extends javax.swing.JFrame {
+    
+    private AdminSPForm SPform;
+    private AdminPKForm PKform;
+    private AdminLSCForm LSCform;
+    private AdminHDForm HDform;
+    private AdminNVForm NVform;
+    private AdminTKForm TKform;
 
     private MenuAdmin menu;
     private HeaderAdmin header;
-    private AdminForm adminForm;
     private MigLayout layout;
+    private Animator animator;
+    private MainForm main;
     
     public Main_Admin_Frame() {
         initComponents();
         init();
     }
-
     
     private void init(){
+        main = new MainForm();
+        SPform = new AdminSPForm(main);
+        PKform = new AdminPKForm(this.main);
+        LSCform = new AdminLSCForm();
+        HDform = new AdminHDForm();
+        NVform = new AdminNVForm(this.main);
+        TKform = new AdminTKForm();
+        
         layout = new MigLayout("fill", "0[]0[100%, fill]0", "0[fill, top]0");
         bg.setLayout(layout);
         menu = new MenuAdmin();
         header = new HeaderAdmin();
-        adminForm = new AdminForm();
-        bg.add(menu, "w 230!, spany 2");
+        main.setLayout(new BorderLayout());
+        bg.add(menu, "w 170!, spany 2");
         bg.add(header, "h 50!, wrap");
-        bg.add(adminForm, "w 100%, h 100%");
+        bg.add(main, "w 100%, h 100%");
+        
+        menu.addEvent(new EventAdminMenuSelected(){
+            @Override
+            public void eventSelected(int index) {
+                switch(index){
+                    case 0: main.showForm(SPform);
+                    break;
+                    case 1: main.showForm(PKform);
+                    break;
+                    case 2: main.showForm(LSCform);
+                    break;
+                    case 3: main.showForm(HDform);
+                    break;
+                    case 4: main.showForm(NVform);
+                    break;
+                    case 5: main.showForm(TKform);
+                    break;
+                }
+            }
+            
+        });
+        
+        main.showForm(new AdminSPForm(main));
+        
+        TimingTarget target;
+        target = new TimingTargetAdapter(){
+            @Override
+            public void timingEvent(float fraction){
+                double width;
+                if (menu.isShowMenu()){
+                    width = 0 + 170 * (1f - fraction);
+                } else {
+                    width = 0 + 170 * fraction;
+                }
+                layout.setComponentConstraints(menu, "w " + width + "!, spany 2");
+                menu.revalidate();
+            }
+            
+            public void end() {
+                menu.setShowMenu(!menu.isShowMenu());
+            }
+        };
+        
+        animator = new Animator(500, target);
+        animator.setResolution(0);
+        animator.setDeceleration(0.5f);
+        animator.setAcceleration(0.5f);
+        header.addMenuEvent(new ActionListener(){
+            public void actionPerformed(ActionEvent ae){
+                if (!animator.isRunning()){
+                    animator.start();
+                }
+            }
+        });
     }
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -36,6 +119,7 @@ public class Main_Admin_Frame extends javax.swing.JFrame {
         bg = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(1024, 571));
 
         bg.setBackground(new java.awt.Color(255, 255, 255));
 

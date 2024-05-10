@@ -7,7 +7,6 @@ import com.view.swing.TextField;
 import java.awt.Color;
 import java.awt.Cursor;
 import java.awt.Font;
-import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -21,7 +20,6 @@ public class PanelLogIn extends javax.swing.JPanel {
     private TextField txtUser;
     private PasswordField txtPass;
     private MigLayout layout;
-    private ActionListener ac;
     
     public PanelLogIn(ActionListener cmdForget) {
         initComponents();

@@ -58,7 +58,7 @@ public class PasswordField extends JPasswordField {
         Graphics2D g2 = (Graphics2D) g;
         g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
         g2.setColor(Color.decode("#D3C1A5"));
-        g2.fillRoundRect(0, 0, getWidth(), getHeight(), getHeight(), getHeight());
+        g2.fillRoundRect(0, 0, getWidth(), getHeight(), 20, 20);
         paintIcon(g);
         super.paintComponent(g);
     }
