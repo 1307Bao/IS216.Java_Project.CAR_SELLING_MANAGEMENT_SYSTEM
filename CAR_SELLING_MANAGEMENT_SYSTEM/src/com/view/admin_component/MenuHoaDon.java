@@ -17,6 +17,7 @@ public class MenuHoaDon extends javax.swing.JPanel {
     private void init(){
         layout = new MigLayout("wrap", "push[CENTER]push", "push[]20[]25[]10[]10[]push");
         this.setLayout(layout);
+        lbReport.setText("");
         
         this.removeAll();
         this.add(cmdAdd, "w 75%");
@@ -122,8 +123,8 @@ public class MenuHoaDon extends javax.swing.JPanel {
 
         listMenu.setOpaque(false);
 
-        lbReport.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
-        lbReport.setForeground(new java.awt.Color(255, 51, 51));
+        lbReport.setFont(new java.awt.Font("SansSerif", 3, 12)); // NOI18N
+        lbReport.setForeground(new java.awt.Color(94, 68, 33));
         lbReport.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbReport.setText("abc");
 

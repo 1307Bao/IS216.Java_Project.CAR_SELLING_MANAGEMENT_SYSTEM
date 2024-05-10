@@ -22,7 +22,7 @@ public class MenuAdmin extends javax.swing.JPanel {
 
     
     private EventAdminMenuSelected event;
-    private boolean showMenu = true;
+    private boolean showMenu = false;
     
     public void addEvent(EventAdminMenuSelected event){
         this.event = event;
@@ -51,7 +51,8 @@ public class MenuAdmin extends javax.swing.JPanel {
         listMenu1.addItem(new ModelMenu(new ImageIcon(getClass().getResource("/com/view/icon/HD.png")), "    Hóa đơn"));
         listMenu1.addItem(new ModelMenu(new ImageIcon(getClass().getResource("/com/view/icon/NV.png")), "    Nhân viên"));
         listMenu1.addItem(new ModelMenu(new ImageIcon(getClass().getResource("/com/view/icon/TK.png")), "    Thống kê"));
-    }
+        listMenu1.addItem(new ModelMenu("Khách hàng"));
+    }   
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents

@@ -21,6 +21,7 @@ public class AdminPKForm extends javax.swing.JPanel {
     }
 
     private void init(){
+        table.fixTable(scroll);
         scroll.setVerticalScrollBar(new ScrollBarCustom());
         scroll.getViewport().setOpaque(false);
         txtSearch.setHint("Tìm kiếm . . .");
@@ -38,7 +39,7 @@ public class AdminPKForm extends javax.swing.JPanel {
         roundPanel18 = new com.view.swing.RoundPanel();
         roundPanel17 = new com.view.swing.RoundPanel();
         scroll = new javax.swing.JScrollPane();
-        table8 = new com.view.swing.Table();
+        table = new com.view.swing.TablePK();
         txtSearch = new com.view.swing.TextField();
         cmdAdd = new com.view.swing.Button();
 
@@ -52,30 +53,23 @@ public class AdminPKForm extends javax.swing.JPanel {
 
         roundPanel17.setBackground(new java.awt.Color(251, 238, 215));
 
-        scroll.setBorder(null);
-        scroll.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
-
-        table8.setModel(new javax.swing.table.DefaultTableModel(
+        table.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null}
+
             },
             new String [] {
-                "Mã phụ kiện", "Ngày nhập", "Tên phụ kiện", "Xuất sứ", "Số lượng", "Đơn giá"
+                "Mã phụ kiện", "Tên phụ kiện", "Ngày nhập", "Xuất sứ", "Số lượng", "Đơn giá", ""
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false
+                false, false, false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return canEdit [columnIndex];
             }
         });
-        table8.setOpaque(false);
-        scroll.setViewportView(table8);
+        scroll.setViewportView(table);
 
         javax.swing.GroupLayout roundPanel17Layout = new javax.swing.GroupLayout(roundPanel17);
         roundPanel17.setLayout(roundPanel17Layout);
@@ -88,10 +82,7 @@ public class AdminPKForm extends javax.swing.JPanel {
         );
         roundPanel17Layout.setVerticalGroup(
             roundPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(roundPanel17Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(scroll, javax.swing.GroupLayout.DEFAULT_SIZE, 298, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(scroll, javax.swing.GroupLayout.DEFAULT_SIZE, 337, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout roundPanel18Layout = new javax.swing.GroupLayout(roundPanel18);
@@ -106,9 +97,9 @@ public class AdminPKForm extends javax.swing.JPanel {
         roundPanel18Layout.setVerticalGroup(
             roundPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, roundPanel18Layout.createSequentialGroup()
-                .addGap(14, 14, 14)
+                .addGap(15, 15, 15)
                 .addComponent(roundPanel17, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(14, 14, 14))
+                .addGap(15, 15, 15))
         );
 
         txtSearch.setSuffixIcon(new javax.swing.ImageIcon(getClass().getResource("/com/view/icon/Finding.png"))); // NOI18N
@@ -152,7 +143,7 @@ public class AdminPKForm extends javax.swing.JPanel {
                         .addComponent(PK)))
                 .addGap(9, 9, 9)
                 .addComponent(roundPanel18, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(14, 14, 14))
+                .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -171,7 +162,7 @@ public class AdminPKForm extends javax.swing.JPanel {
     private com.view.swing.RoundPanel roundPanel17;
     private com.view.swing.RoundPanel roundPanel18;
     private javax.swing.JScrollPane scroll;
-    private com.view.swing.Table table8;
+    private com.view.swing.TablePK table;
     private com.view.swing.TextField txtSearch;
     // End of variables declaration//GEN-END:variables
 }

@@ -2,6 +2,10 @@ package com.view.form;
 
 import java.awt.BorderLayout;
 import java.awt.Component;
+import java.awt.Container;
+import java.awt.Window;
+import javax.swing.JFrame;
+import javax.swing.SwingUtilities;
 import javax.swing.border.EmptyBorder;
 
 public class MainForm extends javax.swing.JPanel {
@@ -18,6 +22,10 @@ public class MainForm extends javax.swing.JPanel {
         add(form);
         repaint();
         revalidate(); 
+    }
+    
+    public JFrame getMainFrame(){
+        return (JFrame) SwingUtilities.getWindowAncestor(this);
     }
 
     

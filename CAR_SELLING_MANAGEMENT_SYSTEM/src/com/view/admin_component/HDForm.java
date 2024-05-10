@@ -7,6 +7,7 @@ public class HDForm extends javax.swing.JPanel {
 
     public HDForm() {
         initComponents();
+        table1.fixTable(scroll);
         scroll.setVerticalScrollBar(new ScrollBarCustom());
         scroll.getViewport().setOpaque(false);
         txtSearch.setHint("Tìm kiếm . . .");

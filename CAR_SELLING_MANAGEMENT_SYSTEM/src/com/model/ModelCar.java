@@ -43,9 +43,18 @@ public class ModelCar {
         this.xeImg = xeImg;
     }
 
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
     
     private String tenXe;
     private String trangThai;
     private String Gia;
+    private String description;
     private Icon xeImg;
 }

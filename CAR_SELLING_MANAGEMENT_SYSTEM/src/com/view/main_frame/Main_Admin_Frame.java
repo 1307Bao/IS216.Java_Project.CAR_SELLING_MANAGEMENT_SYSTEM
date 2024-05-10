@@ -5,6 +5,7 @@ import com.event.EventAdminMenuSelected;
 import com.view.admin_component.HeaderAdmin;
 import com.view.admin_component.MenuAdmin;
 import com.view.form.AdminHDForm;
+import com.view.form.AdminKHForm;
 import com.view.form.AdminLSCForm;
 import com.view.form.AdminNVForm;
 import com.view.form.AdminPKForm;
@@ -27,6 +28,7 @@ public class Main_Admin_Frame extends javax.swing.JFrame {
     private AdminHDForm HDform;
     private AdminNVForm NVform;
     private AdminTKForm TKform;
+    private AdminKHForm KHform;
 
     private MenuAdmin menu;
     private HeaderAdmin header;
@@ -41,21 +43,23 @@ public class Main_Admin_Frame extends javax.swing.JFrame {
     
     private void init(){
         main = new MainForm();
-        SPform = new AdminSPForm(main);
-        PKform = new AdminPKForm(this.main);
-        LSCform = new AdminLSCForm();
-        HDform = new AdminHDForm();
-        NVform = new AdminNVForm(this.main);
-        TKform = new AdminTKForm();
         
         layout = new MigLayout("fill", "0[]0[100%, fill]0", "0[fill, top]0");
         bg.setLayout(layout);
         menu = new MenuAdmin();
         header = new HeaderAdmin();
         main.setLayout(new BorderLayout());
-        bg.add(menu, "w 170!, spany 2");
+        bg.add(menu, "w 0!, spany 2");
         bg.add(header, "h 50!, wrap");
         bg.add(main, "w 100%, h 100%");
+        
+        SPform = new AdminSPForm(main);
+        PKform = new AdminPKForm(this.main);
+        LSCform = new AdminLSCForm(main);
+        HDform = new AdminHDForm();
+        NVform = new AdminNVForm(this.main);
+        TKform = new AdminTKForm();
+        KHform = new AdminKHForm(main);
         
         menu.addEvent(new EventAdminMenuSelected(){
             @Override
@@ -72,6 +76,8 @@ public class Main_Admin_Frame extends javax.swing.JFrame {
                     case 4: main.showForm(NVform);
                     break;
                     case 5: main.showForm(TKform);
+                    break;
+                    case 6: main.showForm(KHform);
                     break;
                 }
             }

@@ -1,23 +1,26 @@
-
 package com.view.admin_component;
 
-import com.card.AdminUpdateSPCard;
+import com.card.AdminInsertUpdateSPCard;
+import com.dialog.SPDialog;
 import com.model.ModelCar;
+import com.view.form.AdminSPForm;
 import com.view.form.MainForm;
+import raven.glasspanepopup.GlassPanePopup;
 
 public class SanPham extends javax.swing.JPanel {
 
     private ModelCar model;
     private MainForm main;
-    
+
     public SanPham(ModelCar model, MainForm main) {
         this.main = main;
         this.model = model;
         initComponents();
         init();
     }
-    
-    private void init(){
+
+    private void init() {
+        GlassPanePopup.install(main.getMainFrame());
         logo.setIcon(model.getXeImg());
         this.tenXe.setText(model.getTenXe());
         this.Gia.setText(model.getGia());
@@ -34,6 +37,7 @@ public class SanPham extends javax.swing.JPanel {
         logo = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         cmdUpdate = new com.view.swing.Button();
+        cmdCheck = new com.view.swing.Button();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setBorder(new javax.swing.border.LineBorder(new java.awt.Color(183, 150, 107), 5, true));
@@ -60,6 +64,13 @@ public class SanPham extends javax.swing.JPanel {
             }
         });
 
+        cmdCheck.setText("-");
+        cmdCheck.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmdCheckActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -75,15 +86,17 @@ public class SanPham extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(TrangThai)
                 .addGap(20, 20, 20)
-                .addComponent(cmdUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(20, 20, 20))
-            .addComponent(logo, javax.swing.GroupLayout.DEFAULT_SIZE, 206, Short.MAX_VALUE)
+                .addComponent(cmdUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(cmdCheck, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+            .addComponent(logo, javax.swing.GroupLayout.DEFAULT_SIZE, 234, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(0, 0, 0)
-                .addComponent(logo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(logo, javax.swing.GroupLayout.DEFAULT_SIZE, 123, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
                 .addComponent(tenXe)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -91,19 +104,27 @@ public class SanPham extends javax.swing.JPanel {
                     .addComponent(Gia)
                     .addComponent(jLabel1)
                     .addComponent(TrangThai)
-                    .addComponent(cmdUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cmdUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cmdCheck, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
 
     private void cmdUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdUpdateActionPerformed
-        main.showForm(new AdminUpdateSPCard(model, main));
+        main.showForm(new AdminInsertUpdateSPCard(model, main));
     }//GEN-LAST:event_cmdUpdateActionPerformed
+
+    private void cmdCheckActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdCheckActionPerformed
+        
+        SPDialog dia = new SPDialog(model, main);
+        GlassPanePopup.showPopup(dia);
+    }//GEN-LAST:event_cmdCheckActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Gia;
     private javax.swing.JLabel TrangThai;
+    private com.view.swing.Button cmdCheck;
     private com.view.swing.Button cmdUpdate;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel logo;

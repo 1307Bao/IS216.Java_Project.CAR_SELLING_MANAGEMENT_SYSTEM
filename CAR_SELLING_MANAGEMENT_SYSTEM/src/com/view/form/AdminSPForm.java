@@ -3,7 +3,6 @@ package com.view.form;
 import com.model.ModelCar;
 import com.view.admin_component.MenuSanPham;
 import com.view.admin_component.SPForm;
-import com.view.admin_component.SanPham;
 import javax.swing.ImageIcon;
 import net.miginfocom.swing.MigLayout;
 
@@ -13,10 +12,9 @@ public class AdminSPForm extends javax.swing.JPanel {
     private MenuSanPham menu;
     private SPForm form;
     private MainForm main;
- 
+    
     public AdminSPForm(MainForm main) {
         this.main = main;
-        
         initComponents();
         init();
         initSP();
@@ -26,9 +24,9 @@ public class AdminSPForm extends javax.swing.JPanel {
         layout = new MigLayout("fill, insets 0");
         setLayout(layout);
         form = new SPForm(main);
-        menu = new MenuSanPham();
-        add(menu, "width 30%, pos 0al 0 n 100%");
-        add(form, "width 70%, pos 1al 0 n 100%");
+        menu = new MenuSanPham(main);
+        add(menu, "width 20%, pos 0al 0 n 100%");
+        add(form, "width 80%, pos 1al 0 n 100%");
     }
     
     private void initSP(){

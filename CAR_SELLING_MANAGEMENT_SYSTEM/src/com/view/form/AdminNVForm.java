@@ -22,6 +22,7 @@ public class AdminNVForm extends javax.swing.JPanel {
     
     private void init(){
         txtSearch.setHint("Tìm kiếm");
+        tableNV1.fixTable(scroll);
         scroll.getViewport().setOpaque(false);
         scroll.setVerticalScrollBar(new ScrollBarCustom());
         cmdAdd.addActionListener(new ActionListener(){
@@ -40,7 +41,7 @@ public class AdminNVForm extends javax.swing.JPanel {
         roundPanel1 = new com.view.swing.RoundPanel();
         roundPanel2 = new com.view.swing.RoundPanel();
         scroll = new javax.swing.JScrollPane();
-        table1 = new com.view.swing.Table();
+        tableNV1 = new com.view.swing.TableNV();
         jLabel1 = new javax.swing.JLabel();
         txtSearch = new com.view.swing.TextField();
         cmdAdd = new com.view.swing.Button();
@@ -52,53 +53,43 @@ public class AdminNVForm extends javax.swing.JPanel {
         roundPanel2.setBackground(new java.awt.Color(251, 238, 215));
         roundPanel2.setOpaque(true);
 
-        scroll.setOpaque(false);
-
-        table1.setBackground(new java.awt.Color(251, 238, 215));
-        table1.setModel(new javax.swing.table.DefaultTableModel(
+        tableNV1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null}
+
             },
             new String [] {
-                "ID", "Họ và Tên", "Chức vụ", "SĐT", "Emal", "Ngày làm", "Lương", "Trạng thái"
+                "ID", "Họ tên", "Chức vụ", "SĐT", "Email", "Ngày làm", "Lương", "Trạng thái", ""
             }
         ) {
-            Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
-            };
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false, false
+                false, false, false, false, false, false, false, false, false
             };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return canEdit [columnIndex];
             }
         });
-        scroll.setViewportView(table1);
+        scroll.setViewportView(tableNV1);
 
         javax.swing.GroupLayout roundPanel2Layout = new javax.swing.GroupLayout(roundPanel2);
         roundPanel2.setLayout(roundPanel2Layout);
         roundPanel2Layout.setHorizontalGroup(
             roundPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(roundPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(scroll, javax.swing.GroupLayout.DEFAULT_SIZE, 622, Short.MAX_VALUE)
-                .addContainerGap())
+            .addGap(0, 651, Short.MAX_VALUE)
+            .addGroup(roundPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(roundPanel2Layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(scroll, javax.swing.GroupLayout.DEFAULT_SIZE, 639, Short.MAX_VALUE)
+                    .addContainerGap()))
         );
         roundPanel2Layout.setVerticalGroup(
             roundPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(roundPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(scroll)
-                .addContainerGap())
+            .addGap(0, 439, Short.MAX_VALUE)
+            .addGroup(roundPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(roundPanel2Layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(scroll)
+                    .addContainerGap()))
         );
 
         javax.swing.GroupLayout roundPanel1Layout = new javax.swing.GroupLayout(roundPanel1);
@@ -106,7 +97,7 @@ public class AdminNVForm extends javax.swing.JPanel {
         roundPanel1Layout.setHorizontalGroup(
             roundPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(roundPanel1Layout.createSequentialGroup()
-                .addGap(16, 16, 16)
+                .addGap(15, 15, 15)
                 .addComponent(roundPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(16, 16, 16))
         );
@@ -141,7 +132,7 @@ public class AdminNVForm extends javax.swing.JPanel {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(15, 15, 15)
+                .addGap(20, 20, 20)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(roundPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
@@ -150,7 +141,7 @@ public class AdminNVForm extends javax.swing.JPanel {
                         .addComponent(txtSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(cmdAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(15, 15, 15))
+                .addGap(20, 20, 20))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -182,7 +173,7 @@ public class AdminNVForm extends javax.swing.JPanel {
     private com.view.swing.RoundPanel roundPanel1;
     private com.view.swing.RoundPanel roundPanel2;
     private javax.swing.JScrollPane scroll;
-    private com.view.swing.Table table1;
+    private com.view.swing.TableNV tableNV1;
     private com.view.swing.TextField txtSearch;
     // End of variables declaration//GEN-END:variables
 }

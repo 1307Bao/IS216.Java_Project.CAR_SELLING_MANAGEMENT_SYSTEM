@@ -1,20 +1,26 @@
 
 package com.view.admin_component;
 
+import com.card.AdminInsertUpdateSPCard;
 import com.model.ModelMenu;
+import com.view.form.MainForm;
 import com.view.swing.Button;
 import com.view.swing.TextField;
 import java.awt.Color;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.ImageIcon;
 import net.miginfocom.swing.MigLayout;
 
 public class MenuSanPham extends javax.swing.JPanel {
     
     private MigLayout layout;
-    private Button addSP;
+    private Button cmdAdd;
     private TextField findSP;
-
-    public MenuSanPham() {
+    private MainForm main;
+    
+    public MenuSanPham(MainForm main) {
+        this.main = main;
         initComponents();
         init();
     }
@@ -22,12 +28,19 @@ public class MenuSanPham extends javax.swing.JPanel {
     private void init() {
         layout = new MigLayout("wrap", "push[CENTER]push", "push[]10[]25[]10[]push");
         panel.setLayout(layout);
-        addSP = new Button();
-        addSP.setText("Thêm sản phẩm");
-        addSP.setFont(new java.awt.Font("sansserif", 0, 15));
-        addSP.setForeground(new Color(255, 255, 255));
-        addSP.setIcon(new ImageIcon(getClass().getResource("/com/view/icon/+.png")));
-        panel.add(addSP, "w 75%");
+        cmdAdd = new Button();
+        cmdAdd.setText("Thêm sản phẩm");
+        cmdAdd.setFont(new java.awt.Font("sansserif", 0, 13));
+        cmdAdd.setForeground(new Color(255, 255, 255));
+        cmdAdd.addActionListener(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                main.showForm(new AdminInsertUpdateSPCard(null, main));
+            }
+            
+        });
+        cmdAdd.setIcon(new ImageIcon(getClass().getResource("/com/view/icon/+.png")));
+        panel.add(cmdAdd, "w 75%");
         findSP = new TextField();
         findSP.setHint("Tìm kiếm");
         findSP.setPrefixIcon(new ImageIcon(getClass().getResource("/com/view/icon/Finding.png")));

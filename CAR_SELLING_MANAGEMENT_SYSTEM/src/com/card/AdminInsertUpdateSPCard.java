@@ -10,12 +10,12 @@ import com.view.form.MainForm;
 import com.view.swing.customscrollbar.ScrollBarCustom;
 
 
-public class AdminUpdateSPCard extends javax.swing.JPanel {
+public class AdminInsertUpdateSPCard extends javax.swing.JPanel {
     
     private ModelCar model;
     private MainForm main;
 
-    public AdminUpdateSPCard(ModelCar model, MainForm main) {
+    public AdminInsertUpdateSPCard(ModelCar model, MainForm main) {
         this.main = main;
         this.model = model;
         initComponents();
@@ -26,9 +26,13 @@ public class AdminUpdateSPCard extends javax.swing.JPanel {
     private void init(){
         scroll.setVerticalScrollBar(new ScrollBarCustom());
         scroll.setHorizontalScrollBar(new ScrollBarCustom());
-        txtNameCar.setHint(model.getTenXe());
-        txtNumberOfCar.setHint(model.getTrangThai());
-        txtPrice.setHint(model.getGia());
+        if (model != null){
+            label2.setText("Sửa thông tin xe");
+            txtNameCar.setText(model.getTenXe());
+            txtNumberOfCar.setText(model.getTrangThai());
+            txtPrice.setText(model.getGia());
+            cmdAdd.setText("Sửa");
+        }
     }
 
     @SuppressWarnings("unchecked")
