@@ -10,6 +10,28 @@ public class ModelCar {
         this.giaBan = Gia;
         this.xeImg = xeImg;
     }
+    
+    public ModelCar(String tenXe, String soLuong, String giaBan, String description, String giaNhap, int thoiGianBH, String NCC, Icon xeImg, String maXe, String loaiXe) {
+        this.tenXe = tenXe;
+        this.soLuong = soLuong;
+        this.giaBan = giaBan;
+        this.description = description;
+        this.giaNhap = giaNhap;
+        this.thoiGianBH = thoiGianBH;
+        this.NCC = NCC;
+        this.xeImg = xeImg;
+        this.maXe = maXe;
+        this.loaiXe = loaiXe;
+    }
+    
+
+    public String getLoaiXe() {
+        return loaiXe;
+    }
+
+    public void setLoaiXe(String loaiXe) {
+        this.loaiXe = loaiXe;
+    }
 
     public String getTenXe() {
         return tenXe;
@@ -93,4 +115,5 @@ public class ModelCar {
     private String NCC;
     private Icon xeImg;
     private String maXe;
+    private String loaiXe;
 }
