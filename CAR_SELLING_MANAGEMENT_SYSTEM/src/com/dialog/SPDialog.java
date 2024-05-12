@@ -23,8 +23,10 @@ public class SPDialog extends javax.swing.JPanel {
     
     private void init(){
         lbNameCar.setText(model.getTenXe());
-        lbPrice.setText(model.getGia());
+        lbPrice.setText(model.getGiaBan());
         lbDes.setText(model.getDescription());
+        lbTGBH.setText(model.getThoiGianBH() + "");
+        lbNCC.setText(model.getNCC());
         lbIcon.setIcon(model.getXeImg());
     }
 
@@ -41,6 +43,10 @@ public class SPDialog extends javax.swing.JPanel {
         lbPrice = new javax.swing.JLabel();
         lbDes = new javax.swing.JLabel();
         button1 = new com.view.swing.Button();
+        jLabel4 = new javax.swing.JLabel();
+        lbTGBH = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        lbNCC = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
 
@@ -50,7 +56,7 @@ public class SPDialog extends javax.swing.JPanel {
 
         jLabel2.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(94, 68, 33));
-        jLabel2.setText("Giá:");
+        jLabel2.setText("Giá bán:");
 
         jLabel3.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(94, 68, 33));
@@ -99,6 +105,22 @@ public class SPDialog extends javax.swing.JPanel {
             }
         });
 
+        jLabel4.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(94, 68, 33));
+        jLabel4.setText("Thời gian bảo hành:");
+
+        lbTGBH.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        lbTGBH.setForeground(new java.awt.Color(153, 112, 58));
+        lbTGBH.setText("jLabel5");
+
+        jLabel5.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(94, 68, 33));
+        jLabel5.setText("Nhà cung cấp:");
+
+        lbNCC.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        lbNCC.setForeground(new java.awt.Color(153, 112, 58));
+        lbNCC.setText("jLabel5");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -117,13 +139,20 @@ public class SPDialog extends javax.swing.JPanel {
                         .addGap(39, 39, 39))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1)
-                            .addComponent(lbDes))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                            .addComponent(lbDes)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel1)
+                                .addGap(75, 75, 75)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(lbTGBH)
+                                    .addComponent(jLabel4)
+                                    .addComponent(lbNCC)
+                                    .addComponent(jLabel5))))
+                        .addContainerGap(310, Short.MAX_VALUE))))
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(250, Short.MAX_VALUE)
+                .addContainerGap(285, Short.MAX_VALUE)
                 .addComponent(button1, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 250, Short.MAX_VALUE))
+                .addGap(0, 286, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -131,21 +160,31 @@ public class SPDialog extends javax.swing.JPanel {
                 .addGap(32, 32, 32)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel1)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel1)
+                            .addComponent(jLabel4))
                         .addGap(11, 11, 11)
-                        .addComponent(lbNameCar)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lbNameCar)
+                            .addComponent(lbTGBH))
                         .addGap(27, 27, 27)
-                        .addComponent(jLabel2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(lbPrice)
-                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel2)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(lbPrice))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel5)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(lbNCC)))
+                        .addGap(23, 23, 23)
                         .addComponent(jLabel3))
                     .addComponent(roundPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lbDes)
                 .addGap(18, 18, 18)
                 .addComponent(button1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(12, Short.MAX_VALUE))
+                .addContainerGap(44, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -171,10 +210,14 @@ public class SPDialog extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel lbDes;
     private javax.swing.JLabel lbIcon;
+    private javax.swing.JLabel lbNCC;
     private javax.swing.JLabel lbNameCar;
     private javax.swing.JLabel lbPrice;
+    private javax.swing.JLabel lbTGBH;
     private com.view.swing.RoundPanel roundPanel1;
     // End of variables declaration//GEN-END:variables
 }

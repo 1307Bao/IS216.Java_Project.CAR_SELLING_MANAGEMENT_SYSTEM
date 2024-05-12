@@ -6,8 +6,8 @@ public class ModelCar {
 
     public ModelCar(String tenXe, String trangThai, String Gia, Icon xeImg) {
         this.tenXe = tenXe;
-        this.trangThai = trangThai;
-        this.Gia = Gia;
+        this.soLuong = trangThai;
+        this.giaBan = Gia;
         this.xeImg = xeImg;
     }
 
@@ -19,20 +19,20 @@ public class ModelCar {
         this.tenXe = tenXe;
     }
 
-    public String getTrangThai() {
-        return trangThai;
+    public String getSoLuong() {
+        return soLuong;
     }
 
-    public void setTrangThai(String trangThai) {
-        this.trangThai = trangThai;
+    public void setSoLuong(String soLuong) {
+        this.soLuong = soLuong;
     }
 
-    public String getGia() {
-        return Gia;
+    public String getGiaBan() {
+        return giaBan;
     }
 
-    public void setGia(String Gia) {
-        this.Gia = Gia;
+    public void setGiaBan(String giaBan) {
+        this.giaBan = giaBan;
     }
 
     public Icon getXeImg() {
@@ -51,10 +51,46 @@ public class ModelCar {
         this.description = description;
     }
 
+    public String getGiaNhap() {
+        return giaNhap;
+    }
+
+    public void setGiaNhap(String giaNhap) {
+        this.giaNhap = giaNhap;
+    }
+
+    public int getThoiGianBH() {
+        return thoiGianBH;
+    }
+
+    public void setThoiGianBH(int thoiGianBH) {
+        this.thoiGianBH = thoiGianBH;
+    }
+
+    public String getNCC() {
+        return NCC;
+    }
+
+    public void setNCC(String NCC) {
+        this.NCC = NCC;
+    }
+
+    public String getMaXe() {
+        return maXe;
+    }
+
+    public void setMaXe(String maXe) {
+        this.maXe = maXe;
+    }
+
     
     private String tenXe;
-    private String trangThai;
-    private String Gia;
+    private String soLuong;
+    private String giaBan;
     private String description;
+    private String giaNhap;
+    private int thoiGianBH;
+    private String NCC;
     private Icon xeImg;
+    private String maXe;
 }

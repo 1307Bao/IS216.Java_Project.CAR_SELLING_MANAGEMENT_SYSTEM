@@ -32,18 +32,18 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="1" attributes="0">
-              <EmptySpace pref="19" max="32767" attributes="0"/>
+              <EmptySpace pref="40" max="32767" attributes="0"/>
               <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="19" max="32767" attributes="0"/>
+              <EmptySpace pref="40" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="1" attributes="0">
-              <EmptySpace pref="32" max="32767" attributes="0"/>
+              <EmptySpace pref="40" max="32767" attributes="0"/>
               <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="32" max="32767" attributes="0"/>
+              <EmptySpace pref="40" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -62,36 +62,46 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
                           <Component id="lable2" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
                       </Group>
-                      <Group type="102" attributes="0">
-                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="labele3" min="-2" max="-2" attributes="0"/>
-                              <Component id="label3" min="-2" max="-2" attributes="0"/>
-                              <Component id="label2" min="-2" max="-2" attributes="0"/>
-                              <Component id="lable1" min="-2" max="-2" attributes="0"/>
-                              <Component id="txtCar" alignment="0" max="32767" attributes="0"/>
-                              <Component id="txtNameCar" alignment="0" max="32767" attributes="0"/>
-                              <Component id="txtPrice" pref="185" max="32767" attributes="0"/>
-                              <Component id="txtNumberOfCar" alignment="0" max="32767" attributes="0"/>
-                          </Group>
-                          <EmptySpace pref="59" max="32767" attributes="0"/>
+                      <Group type="102" alignment="0" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="label4" min="-2" max="-2" attributes="0"/>
-                              <Component id="txtNCC" min="-2" pref="185" max="-2" attributes="0"/>
-                              <Component id="lable5" min="-2" max="-2" attributes="0"/>
-                              <Group type="103" alignment="0" groupAlignment="1" attributes="0">
-                                  <Group type="102" alignment="1" attributes="0">
-                                      <Component id="cmdAdd" min="-2" pref="62" max="-2" attributes="0"/>
-                                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Component id="cmdCancle" min="-2" pref="62" max="-2" attributes="0"/>
+                              <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="labele3" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="label3" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="label2" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lable1" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="txtCar" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="txtNameCar" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="txtPrice" alignment="0" pref="185" max="32767" attributes="0"/>
+                                  <Component id="txtNumberOfCar" alignment="0" max="32767" attributes="0"/>
+                              </Group>
+                              <Component id="labele4" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="txtPrice1" alignment="0" min="-2" pref="185" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace pref="66" max="32767" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="label4" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="txtNCC" alignment="0" min="-2" pref="185" max="-2" attributes="0"/>
+                                      <Component id="lable5" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="labele5" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="txtTGBH" alignment="0" min="-2" pref="185" max="-2" attributes="0"/>
+                                      <Component id="scroll" alignment="0" min="-2" pref="257" max="-2" attributes="0"/>
                                   </Group>
-                                  <Component id="scroll" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="-2" pref="121" max="-2" attributes="0"/>
+                                  <Component id="cmdAdd" min="-2" pref="62" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
+                                  <Component id="cmdCancle" min="-2" pref="62" max="-2" attributes="0"/>
+                                  <EmptySpace max="32767" attributes="0"/>
                               </Group>
                           </Group>
-                          <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
@@ -103,41 +113,52 @@
                   <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
                   <Component id="lable2" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" attributes="0">
+                  <Group type="103" groupAlignment="1" attributes="0">
+                      <Group type="102" alignment="1" attributes="0">
                           <Component id="label4" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
                           <Component id="txtNCC" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="lable5" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
-                          <Component id="scroll" max="32767" attributes="0"/>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="cmdAdd" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="cmdCancle" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
+                          <Component id="labele5" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
+                          <Component id="txtTGBH" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <Group type="102" attributes="0">
+                      <Group type="102" alignment="1" attributes="0">
                           <Component id="lable1" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
                           <Component id="txtCar" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="label2" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
                           <Component id="txtNameCar" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
                           <Component id="label3" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="5" pref="5" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
                           <Component id="txtNumberOfCar" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
                           <Component id="labele3" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
                           <Component id="txtPrice" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="labele4" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Component id="lable5" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="scroll" min="-2" pref="144" max="-2" attributes="0"/>
                       </Group>
                   </Group>
-                  <EmptySpace max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="txtPrice1" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="cmdAdd" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="cmdCancle" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -184,7 +205,7 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="6b" green="96" red="b7" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Gi&#xe1;"/>
+            <Property name="text" type="java.lang.String" value="Gi&#xe1; b&#xe1;n"/>
           </Properties>
         </Component>
         <Component class="com.view.swing.TextField" name="txtCar">
@@ -286,8 +307,34 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="6b" green="96" red="b7" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="S&#x1eed;a th&#xf4;ng tin xe"/>
+            <Property name="text" type="java.lang.String" value="Th&#xea;m xe"/>
           </Properties>
+        </Component>
+        <Component class="java.awt.Label" name="labele4">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="SansSerif" size="14" style="1"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="6b" green="96" red="b7" type="rgb"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Gi&#xe1; nh&#x1ead;p"/>
+          </Properties>
+        </Component>
+        <Component class="com.view.swing.TextField" name="txtPrice1">
+        </Component>
+        <Component class="java.awt.Label" name="labele5">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="SansSerif" size="14" style="1"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="6b" green="96" red="b7" type="rgb"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Th&#x1edd;i gian b&#x1ea3;o h&#xe0;nh"/>
+          </Properties>
+        </Component>
+        <Component class="com.view.swing.TextField" name="txtTGBH">
         </Component>
       </SubComponents>
     </Container>

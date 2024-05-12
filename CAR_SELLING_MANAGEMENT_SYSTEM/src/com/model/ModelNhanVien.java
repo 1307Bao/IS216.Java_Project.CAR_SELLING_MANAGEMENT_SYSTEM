@@ -17,8 +17,10 @@ public class ModelNhanVien {
     private String ngayVaoLam;
     private String trangThai;
     private String email;
+    private String taiKhoan;
+    private String matKhau;
 
-    public ModelNhanVien(int MaNV, String tenNV, String SDT, int luong, String chucVu, String ngayVaoLam, String trangThai, String email) {
+    public ModelNhanVien(int MaNV, String tenNV, String SDT, int luong, String chucVu, String ngayVaoLam, String trangThai, String email, String taiKhoan, String matKhau) {
         this.MaNV = MaNV;
         this.tenNV = tenNV;
         this.SDT = SDT;
@@ -27,7 +29,11 @@ public class ModelNhanVien {
         this.ngayVaoLam = ngayVaoLam;
         this.trangThai = trangThai;
         this.email = email;
+        this.taiKhoan = taiKhoan;
+        this.matKhau = matKhau;
     }
+
+    
 
     public ModelNhanVien() {
     }
@@ -94,6 +100,22 @@ public class ModelNhanVien {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getTaiKhoan() {
+        return taiKhoan;
+    }
+
+    public void setTaiKhoan(String taiKhoan) {
+        this.taiKhoan = taiKhoan;
+    }
+
+    public String getMatKhau() {
+        return matKhau;
+    }
+
+    public void setMatKhau(String matKhau) {
+        this.matKhau = matKhau;
     }
     
     

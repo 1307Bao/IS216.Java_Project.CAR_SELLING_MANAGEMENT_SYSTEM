@@ -7,15 +7,17 @@ public class ModelPhuKien {
     private String tenPK;
     private String xuatSu;
     private int soLuong;
-    private String donGia;
+    private String giaBan;
+    private String giaNhap;
 
-    public ModelPhuKien(String maPK, String ngayNhap, String tenPK, String xuatSu, int soLuong, String donGia) {
+    public ModelPhuKien(String maPK, String ngayNhap, String tenPK, String xuatSu, int soLuong, String donGia, String giaNhap) {
         this.maPK = maPK;
         this.ngayNhap = ngayNhap;
         this.tenPK = tenPK;
         this.xuatSu = xuatSu;
         this.soLuong = soLuong;
-        this.donGia = donGia;
+        this.giaBan = donGia;
+        this.giaNhap = giaNhap;
     }
 
     public String getMaPK() {
@@ -58,13 +60,20 @@ public class ModelPhuKien {
         this.soLuong = soLuong;
     }
 
-    public String getDonGia() {
-        return donGia;
+    public String getGiaBan() {
+        return giaBan;
     }
 
-    public void setDonGia(String donGia) {
-        this.donGia = donGia;
+    public void setGiaBan(String giaBan) {
+        this.giaBan = giaBan;
     }
-    
+
+    public String getGiaNhap() {
+        return giaNhap;
+    }
+
+    public void setGiaNhap(String giaNhap) {
+        this.giaNhap = giaNhap;
+    }
     
 }

@@ -23,8 +23,8 @@ public class SanPham extends javax.swing.JPanel {
         GlassPanePopup.install(main.getMainFrame());
         logo.setIcon(model.getXeImg());
         this.tenXe.setText(model.getTenXe());
-        this.Gia.setText(model.getGia());
-        this.TrangThai.setText(model.getTrangThai());
+        this.Gia.setText(model.getGiaBan());
+        this.TrangThai.setText(model.getSoLuong());
     }
 
     @SuppressWarnings("unchecked")

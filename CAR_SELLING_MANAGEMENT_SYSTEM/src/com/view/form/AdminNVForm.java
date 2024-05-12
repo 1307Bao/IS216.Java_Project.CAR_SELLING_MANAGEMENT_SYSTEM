@@ -28,7 +28,7 @@ public class AdminNVForm extends javax.swing.JPanel {
         cmdAdd.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent e) {
-                main.showForm(new AdminThemPhuKienCard(main));
+                main.showForm(new AdminThemNhanVienCard(main));
             }
             
         });
