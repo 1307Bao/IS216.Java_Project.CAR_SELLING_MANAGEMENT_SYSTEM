@@ -1,6 +1,6 @@
 package com.model;
 
-import com.event.EventLSC;
+import com.controller.event.EventLSC;
 
 public class ModelEventLSC {
     private ModelLichSuaChua data;

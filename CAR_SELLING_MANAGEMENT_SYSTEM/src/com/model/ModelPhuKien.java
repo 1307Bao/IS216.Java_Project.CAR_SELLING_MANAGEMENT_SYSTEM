@@ -2,38 +2,26 @@ package com.model;
 
 public class ModelPhuKien {
     
-    private String maPK;
-    private String ngayNhap;
+    private int maPK;
     private String tenPK;
-    private String xuatSu;
     private int soLuong;
     private String giaBan;
     private String giaNhap;
 
-    public ModelPhuKien(String maPK, String ngayNhap, String tenPK, String xuatSu, int soLuong, String donGia, String giaNhap) {
+    public ModelPhuKien(int maPK, String tenPK, int soLuong, String giaNhap, String giaBan) {
         this.maPK = maPK;
-        this.ngayNhap = ngayNhap;
         this.tenPK = tenPK;
-        this.xuatSu = xuatSu;
         this.soLuong = soLuong;
-        this.giaBan = donGia;
+        this.giaBan = giaBan;
         this.giaNhap = giaNhap;
     }
 
-    public String getMaPK() {
+    public int getMaPK() {
         return maPK;
     }
 
-    public void setMaPK(String maPK) {
+    public void setMaPK(int maPK) {
         this.maPK = maPK;
-    }
-
-    public String getNgayNhap() {
-        return ngayNhap;
-    }
-
-    public void setNgayNhap(String ngayNhap) {
-        this.ngayNhap = ngayNhap;
     }
 
     public String getTenPK() {
@@ -42,14 +30,6 @@ public class ModelPhuKien {
 
     public void setTenPK(String tenPK) {
         this.tenPK = tenPK;
-    }
-
-    public String getXuatSu() {
-        return xuatSu;
-    }
-
-    public void setXuatSu(String xuatSu) {
-        this.xuatSu = xuatSu;
     }
 
     public int getSoLuong() {

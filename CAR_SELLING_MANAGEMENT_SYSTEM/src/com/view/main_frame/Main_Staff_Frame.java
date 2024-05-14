@@ -1,4 +1,3 @@
-
 package com.view.main_frame;
 
 import com.controller.event.EventAdminMenuSelected;
@@ -8,10 +7,7 @@ import com.view.admin_component.MenuAdmin;
 import com.view.form.AdminHDForm;
 import com.view.form.AdminKHForm;
 import com.view.form.AdminLSCForm;
-import com.view.form.AdminNVForm;
 import com.view.form.AdminPKForm;
-import com.view.form.AdminSPForm;
-import com.view.form.AdminTKForm;
 import com.view.form.MainForm;
 import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
@@ -22,14 +18,11 @@ import org.jdesktop.animation.timing.Animator;
 import org.jdesktop.animation.timing.TimingTarget;
 import org.jdesktop.animation.timing.TimingTargetAdapter;
 
-public class Main_Admin_Frame extends javax.swing.JFrame {
-    
-    private AdminSPForm SPform;
+public class Main_Staff_Frame extends javax.swing.JFrame {
+
     private AdminPKForm PKform;
     private AdminLSCForm LSCform;
     private AdminHDForm HDform;
-    private AdminNVForm NVform;
-    private AdminTKForm TKform;
     private AdminKHForm KHform;
 
     private MenuAdmin menu;
@@ -38,7 +31,7 @@ public class Main_Admin_Frame extends javax.swing.JFrame {
     private Animator animator;
     private MainForm main;
     
-    public Main_Admin_Frame() {
+    public Main_Staff_Frame() {
         initComponents();
         init();
     }
@@ -50,13 +43,10 @@ public class Main_Admin_Frame extends javax.swing.JFrame {
         bg.setLayout(layout);
         
         menu = new MenuAdmin();
-        menu.initItem(new ModelMenu(new ImageIcon(getClass().getResource("/com/view/icon/SP.png")), "    Sản phẩm"));
         menu.initItem(new ModelMenu(new ImageIcon(getClass().getResource("/com/view/icon/PK.png")), "    Phụ kiện"));
         menu.initItem(new ModelMenu(new ImageIcon(getClass().getResource("/com/view/icon/LSC.png")), "    Lịch sửa chữa"));
         menu.initItem(new ModelMenu(new ImageIcon(getClass().getResource("/com/view/icon/HD.png")), "    Hóa đơn"));
-        menu.initItem(new ModelMenu(new ImageIcon(getClass().getResource("/com/view/icon/NV.png")), "    Nhân viên"));
-        menu.initItem(new ModelMenu(new ImageIcon(getClass().getResource("/com/view/icon/TK.png")), "    Thống kê"));
-        menu.initItem(new ModelMenu(new ImageIcon(getClass().getResource("/com/view/icon/KH.png")), "    Khách hàng"));
+        menu.initItem(new ModelMenu("Khách hàng"));
         
         header = new HeaderAdmin();
         main.setLayout(new BorderLayout());
@@ -64,38 +54,28 @@ public class Main_Admin_Frame extends javax.swing.JFrame {
         bg.add(header, "h 50!, wrap");
         bg.add(main, "w 100%, h 100%");
         
-        SPform = new AdminSPForm(main);
         PKform = new AdminPKForm(this.main);
         LSCform = new AdminLSCForm(main);
         HDform = new AdminHDForm();
-        NVform = new AdminNVForm(this.main);
-        TKform = new AdminTKForm();
         KHform = new AdminKHForm(main);
         
         menu.addEvent(new EventAdminMenuSelected(){
             @Override
             public void eventSelected(int index) {
                 switch(index){
-                    case 0: main.showForm(SPform);
+                    case 0: main.showForm(PKform);
                     break;
-                    case 1: main.showForm(PKform);
+                    case 1: main.showForm(LSCform);
                     break;
-                    case 2: main.showForm(LSCform);
+                    case 2: main.showForm(HDform);
                     break;
-                    case 3: main.showForm(HDform);
-                    break;
-                    case 4: main.showForm(NVform);
-                    break;
-                    case 5: main.showForm(TKform);
-                    break;
-                    case 6: main.showForm(KHform);
-                    break;
+                    case 3: main.showForm(KHform);
                 }
             }
             
         });
         
-        main.showForm(new AdminSPForm(main));
+        main.showForm(new AdminPKForm(main));
         
         TimingTarget target;
         target = new TimingTargetAdapter(){
@@ -128,7 +108,7 @@ public class Main_Admin_Frame extends javax.swing.JFrame {
             }
         });
     }
-    
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -138,17 +118,15 @@ public class Main_Admin_Frame extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(1024, 571));
 
-        bg.setBackground(new java.awt.Color(255, 255, 255));
-
         javax.swing.GroupLayout bgLayout = new javax.swing.GroupLayout(bg);
         bg.setLayout(bgLayout);
         bgLayout.setHorizontalGroup(
             bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 855, Short.MAX_VALUE)
+            .addGap(0, 400, Short.MAX_VALUE)
         );
         bgLayout.setVerticalGroup(
             bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 476, Short.MAX_VALUE)
+            .addGap(0, 300, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -159,9 +137,7 @@ public class Main_Admin_Frame extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(bg, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(0, 0, 0))
+            .addComponent(bg, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -182,20 +158,20 @@ public class Main_Admin_Frame extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Main_Admin_Frame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Main_Staff_Frame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Main_Admin_Frame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Main_Staff_Frame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Main_Admin_Frame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Main_Staff_Frame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Main_Admin_Frame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Main_Staff_Frame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Main_Admin_Frame().setVisible(true);
+                new Main_Staff_Frame().setVisible(true);
             }
         });
     }

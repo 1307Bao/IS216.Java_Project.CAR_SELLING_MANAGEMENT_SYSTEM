@@ -15,16 +15,14 @@ public class MenuHoaDon extends javax.swing.JPanel {
     }
     
     private void init(){
-        layout = new MigLayout("wrap", "push[CENTER]push", "push[]20[]25[]10[]10[]push");
+        layout = new MigLayout("wrap", "push[CENTER]push", "push[]25[]10[]10[]push");
         this.setLayout(layout);
         lbReport.setText("");
         
         this.removeAll();
-        this.add(cmdAdd, "w 75%");
         this.add(timeSearch, "w 75%");
         this.add(lbReport, "w 75%");
         this.add(listMenu, "w 75%");
-        
         
         listMenu.addItem(new ModelMenu("    Tất cả"));
         listMenu.addItem(new ModelMenu("    Mua xe"));

@@ -1,4 +1,4 @@
-package com.card;
+package com.view.card;
 
 import com.view.form.AdminPKForm;
 import com.view.form.MainForm;

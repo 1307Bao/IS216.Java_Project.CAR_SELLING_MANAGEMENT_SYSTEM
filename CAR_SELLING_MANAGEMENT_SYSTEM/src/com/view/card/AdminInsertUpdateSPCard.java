@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
-package com.card;
+package com.view.card;
 
 import com.model.ModelCar;
 import com.view.form.AdminSPForm;
@@ -29,12 +29,12 @@ public class AdminInsertUpdateSPCard extends javax.swing.JPanel {
         if (model != null){
             lb.setText("Sửa xe");
             txtNameCar.setText(model.getTenXe());
-            txtNumberOfCar.setText(model.getSoLuong());
+            txtNumberOfCar.setText(model.getSoLuong() + "");
             txtPrice.setText(model.getGiaBan());
             cmdAdd.setText("Sửa");
-            txtNCC.setText(model.getNCC());
+            txtNCC.setText(model.getNCC() + "");
             txtPrice1.setText(model.getGiaNhap());
-            txtCar.setText(model.getMaXe());
+            txtCar.setText(model.getMaXe() + "");
             txtLoaiXe.setText(model.getLoaiXe());
         }
     }

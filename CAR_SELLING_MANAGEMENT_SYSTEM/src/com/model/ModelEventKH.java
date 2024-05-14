@@ -1,6 +1,6 @@
 package com.model;
 
-import com.event.EventKH;
+import com.controller.event.EventKH;
 
 public class ModelEventKH {
     

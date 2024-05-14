@@ -4,24 +4,22 @@ import javax.swing.Icon;
 
 public class ModelCar {
 
-    public ModelCar(String tenXe, String trangThai, String Gia, Icon xeImg) {
+    public ModelCar(String tenXe, int soLuong, String Gia, Icon xeImg) {
         this.tenXe = tenXe;
-        this.soLuong = trangThai;
+        this.soLuong = soLuong;
         this.giaBan = Gia;
         this.xeImg = xeImg;
     }
     
-    public ModelCar(String tenXe, String soLuong, String giaBan, String description, String giaNhap, int thoiGianBH, String NCC, Icon xeImg, String maXe, String loaiXe) {
-        this.tenXe = tenXe;
-        this.soLuong = soLuong;
-        this.giaBan = giaBan;
-        this.description = description;
-        this.giaNhap = giaNhap;
-        this.thoiGianBH = thoiGianBH;
-        this.NCC = NCC;
-        this.xeImg = xeImg;
+    public ModelCar(int maXe, String tenXe, String loaiXe, String giaNhap, String giaBan, int tgbh, int soLuong, int maNCC){
         this.maXe = maXe;
         this.loaiXe = loaiXe;
+        this.tenXe = tenXe;
+        this.giaNhap = giaNhap;
+        this.giaBan = giaBan;
+        this.thoiGianBH = tgbh;
+        this.soLuong = soLuong;
+        this.NCC = maNCC;
     }
     
 
@@ -41,11 +39,11 @@ public class ModelCar {
         this.tenXe = tenXe;
     }
 
-    public String getSoLuong() {
+    public int getSoLuong() {
         return soLuong;
     }
 
-    public void setSoLuong(String soLuong) {
+    public void setSoLuong(int soLuong) {
         this.soLuong = soLuong;
     }
 
@@ -89,31 +87,32 @@ public class ModelCar {
         this.thoiGianBH = thoiGianBH;
     }
 
-    public String getNCC() {
+    public int getNCC() {
         return NCC;
     }
 
-    public void setNCC(String NCC) {
+    public void setNCC(int NCC) {
         this.NCC = NCC;
     }
 
-    public String getMaXe() {
+    public int getMaXe() {
         return maXe;
     }
 
-    public void setMaXe(String maXe) {
+    public void setMaXe(java.lang.Integer maXe) {
         this.maXe = maXe;
     }
 
     
     private String tenXe;
-    private String soLuong;
+    private int soLuong;
     private String giaBan;
     private String description;
     private String giaNhap;
     private int thoiGianBH;
-    private String NCC;
+    private int NCC;
     private Icon xeImg;
-    private String maXe;
+    private int maXe;
     private String loaiXe;
+    
 }

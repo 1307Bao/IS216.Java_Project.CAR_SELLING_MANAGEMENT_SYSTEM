@@ -1,6 +1,6 @@
 package com.model;
 
-import com.event.EventNV;
+import com.controller.event.EventNV;
 
 public class ModelEventNV {
     

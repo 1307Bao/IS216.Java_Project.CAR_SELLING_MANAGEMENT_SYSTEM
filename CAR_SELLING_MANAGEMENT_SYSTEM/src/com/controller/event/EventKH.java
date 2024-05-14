@@ -1,4 +1,4 @@
-package com.event;
+package com.controller.event;
 
 import com.model.ModelKhachHang;
 
