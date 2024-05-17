@@ -1,7 +1,7 @@
 
 package com.view.form;
 
-import com.view.card.AdminInsertLSCCard;
+import com.card.AdminInsertLSCCard;
 
 public class AdminLSCForm extends javax.swing.JPanel {
 

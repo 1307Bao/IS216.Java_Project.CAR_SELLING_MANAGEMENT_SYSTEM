@@ -1,6 +1,6 @@
 package com.view.admin_component;
 
-import com.controller.event.EventAdminMenuSelected;
+import com.event.EventAdminMenuSelected;
 import com.model.ModelMenu;
 import java.awt.Color;
 import java.awt.Font;
@@ -34,6 +34,7 @@ public class MenuAdmin extends javax.swing.JPanel {
         initComponents();
         setOpaque(false);
         init();
+        initItem();
     }
     
     private void init(){
@@ -43,9 +44,14 @@ public class MenuAdmin extends javax.swing.JPanel {
         nameLabel.setForeground(Color.decode("#C3AD8F"));
     }
     
-    public void initItem(ModelMenu model){
-        listMenu1.addItem(model);
-        
+    private void initItem(){
+        listMenu1.addItem(new ModelMenu(new ImageIcon(getClass().getResource("/com/view/icon/SP.png")), "    Sản phẩm"));
+        listMenu1.addItem(new ModelMenu(new ImageIcon(getClass().getResource("/com/view/icon/PK.png")), "    Phụ kiện"));
+        listMenu1.addItem(new ModelMenu(new ImageIcon(getClass().getResource("/com/view/icon/LSC.png")), "    Lịch sửa chữa"));
+        listMenu1.addItem(new ModelMenu(new ImageIcon(getClass().getResource("/com/view/icon/HD.png")), "    Hóa đơn"));
+        listMenu1.addItem(new ModelMenu(new ImageIcon(getClass().getResource("/com/view/icon/NV.png")), "    Nhân viên"));
+        listMenu1.addItem(new ModelMenu(new ImageIcon(getClass().getResource("/com/view/icon/TK.png")), "    Thống kê"));
+        listMenu1.addItem(new ModelMenu("Khách hàng"));
     }   
 
     @SuppressWarnings("unchecked")

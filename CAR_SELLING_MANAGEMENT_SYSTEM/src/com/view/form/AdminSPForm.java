@@ -3,7 +3,6 @@ package com.view.form;
 import com.model.ModelCar;
 import com.view.admin_component.MenuSanPham;
 import com.view.admin_component.SPForm;
-import java.util.ArrayList;
 import javax.swing.ImageIcon;
 import net.miginfocom.swing.MigLayout;
 
@@ -13,39 +12,30 @@ public class AdminSPForm extends javax.swing.JPanel {
     private MenuSanPham menu;
     private SPForm form;
     private MainForm main;
-    private ArrayList<ModelCar> lcar;
     
     public AdminSPForm(MainForm main) {
-        lcar = new ArrayList<ModelCar>();
         this.main = main;
         initComponents();
         init();
-        initList();
         initSP();
-    }
-    
-    private void initList(){
-        lcar.add(new ModelCar("BMW Roadster", 9, "3000000000", new ImageIcon(getClass().getResource("/com/view/icon/Car1.png"))));
-        lcar.add(new ModelCar("BMW 8 Series Gran Coupé", 9, "6900000000", new ImageIcon(getClass().getResource("/com/view/icon/Car2.png"))));
-        lcar.add(new ModelCar("BMW i7", 9, "7200000000", new ImageIcon(getClass().getResource("/com/view/icon/Car3.png"))));
-        lcar.add(new ModelCar("BMW iX3", 9, "3500000000", new ImageIcon(getClass().getResource("/com/view/icon/Car4.png"))));
-        lcar.add(new ModelCar("BMW i4", 9, "6900000000", new ImageIcon(getClass().getResource("/com/view/icon/Car5.png"))));
-        lcar.add(new ModelCar("BMW 3 Series", 9, "7200000000", new ImageIcon(getClass().getResource("/com/view/icon/Car6.png"))));
     }
 
     private void init(){
         layout = new MigLayout("fill, insets 0");
         setLayout(layout);
         form = new SPForm(main);
-        menu = new MenuSanPham(main, lcar);
+        menu = new MenuSanPham(main);
         add(menu, "width 20%, pos 0al 0 n 100%");
         add(form, "width 80%, pos 1al 0 n 100%");
     }
     
     private void initSP(){
-        for (int i = 0; i < lcar.size(); i++){
-            form.addSP(lcar.get(i));
-        }
+        form.addSP(new ModelCar("BMW Roadster", "Còn hàng", "3000000000", new ImageIcon(getClass().getResource("/com/view/icon/Car1.png"))));
+        form.addSP(new ModelCar("BMW 8 Series Gran Coupé", "Còn hàng", "6900000000", new ImageIcon(getClass().getResource("/com/view/icon/Car2.png"))));
+        form.addSP(new ModelCar("BMW i7", "Còn hàng", "7200000000", new ImageIcon(getClass().getResource("/com/view/icon/Car3.png"))));
+        form.addSP(new ModelCar("BMW iX3", "Còn hàng", "3500000000", new ImageIcon(getClass().getResource("/com/view/icon/Car4.png"))));
+        form.addSP(new ModelCar("BMW i4", "Còn hàng", "6900000000", new ImageIcon(getClass().getResource("/com/view/icon/Car5.png"))));
+        form.addSP(new ModelCar("BMW 3 Series", "Còn hàng", "7200000000", new ImageIcon(getClass().getResource("/com/view/icon/Car6.png"))));
     }
 
     @SuppressWarnings("unchecked")

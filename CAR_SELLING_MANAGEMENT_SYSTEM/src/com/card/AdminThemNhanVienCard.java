@@ -1,4 +1,4 @@
-package com.view.card;
+package com.card;
 
 import com.view.form.AdminNVForm;
 import com.view.form.MainForm;

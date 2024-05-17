@@ -4,8 +4,8 @@
  */
 package com.view.form;
 
-import com.view.card.AdminThemNhanVienCard;
-import com.view.card.AdminThemPhuKienCard;
+import com.card.AdminThemNhanVienCard;
+import com.card.AdminThemPhuKienCard;
 import com.view.swing.customscrollbar.ScrollBarCustom;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;

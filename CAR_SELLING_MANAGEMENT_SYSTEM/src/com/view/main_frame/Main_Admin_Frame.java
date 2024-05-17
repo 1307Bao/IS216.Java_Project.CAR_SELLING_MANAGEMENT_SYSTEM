@@ -1,8 +1,7 @@
 
 package com.view.main_frame;
 
-import com.controller.event.EventAdminMenuSelected;
-import com.model.ModelMenu;
+import com.event.EventAdminMenuSelected;
 import com.view.admin_component.HeaderAdmin;
 import com.view.admin_component.MenuAdmin;
 import com.view.form.AdminHDForm;
@@ -16,7 +15,6 @@ import com.view.form.MainForm;
 import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import javax.swing.ImageIcon;
 import net.miginfocom.swing.MigLayout;
 import org.jdesktop.animation.timing.Animator;
 import org.jdesktop.animation.timing.TimingTarget;
@@ -48,16 +46,7 @@ public class Main_Admin_Frame extends javax.swing.JFrame {
         
         layout = new MigLayout("fill", "0[]0[100%, fill]0", "0[fill, top]0");
         bg.setLayout(layout);
-        
         menu = new MenuAdmin();
-        menu.initItem(new ModelMenu(new ImageIcon(getClass().getResource("/com/view/icon/SP.png")), "    Sản phẩm"));
-        menu.initItem(new ModelMenu(new ImageIcon(getClass().getResource("/com/view/icon/PK.png")), "    Phụ kiện"));
-        menu.initItem(new ModelMenu(new ImageIcon(getClass().getResource("/com/view/icon/LSC.png")), "    Lịch sửa chữa"));
-        menu.initItem(new ModelMenu(new ImageIcon(getClass().getResource("/com/view/icon/HD.png")), "    Hóa đơn"));
-        menu.initItem(new ModelMenu(new ImageIcon(getClass().getResource("/com/view/icon/NV.png")), "    Nhân viên"));
-        menu.initItem(new ModelMenu(new ImageIcon(getClass().getResource("/com/view/icon/TK.png")), "    Thống kê"));
-        menu.initItem(new ModelMenu(new ImageIcon(getClass().getResource("/com/view/icon/KH.png")), "    Khách hàng"));
-        
         header = new HeaderAdmin();
         main.setLayout(new BorderLayout());
         bg.add(menu, "w 0!, spany 2");

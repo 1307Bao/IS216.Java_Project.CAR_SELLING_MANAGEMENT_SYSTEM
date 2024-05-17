@@ -1,6 +1,6 @@
 package com.model;
 
-import com.controller.event.EventPK;
+import com.event.EventPK;
 import com.model.ModelPhuKien;
 
 public class ModelEventPK {

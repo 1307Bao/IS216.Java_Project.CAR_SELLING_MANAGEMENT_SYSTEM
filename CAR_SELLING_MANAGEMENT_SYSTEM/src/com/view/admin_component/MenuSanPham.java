@@ -1,17 +1,14 @@
 
 package com.view.admin_component;
 
-import com.model.ModelCar;
-import com.view.card.AdminInsertUpdateSPCard;
+import com.card.AdminInsertUpdateSPCard;
 import com.model.ModelMenu;
-import com.view.card.AdminBuySPCard;
 import com.view.form.MainForm;
 import com.view.swing.Button;
 import com.view.swing.TextField;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.ArrayList;
 import javax.swing.ImageIcon;
 import net.miginfocom.swing.MigLayout;
 
@@ -19,20 +16,17 @@ public class MenuSanPham extends javax.swing.JPanel {
     
     private MigLayout layout;
     private Button cmdAdd;
-    private Button cmdBuy;
     private TextField findSP;
     private MainForm main;
-    private ArrayList<ModelCar> lcar;
     
-    public MenuSanPham(MainForm main, ArrayList<ModelCar> lcar) {
-        this.lcar = lcar;
+    public MenuSanPham(MainForm main) {
         this.main = main;
         initComponents();
         init();
     }
     
     private void init() {
-        layout = new MigLayout("wrap", "push[CENTER]push", "push[]10[]25[]25[]10[]push");
+        layout = new MigLayout("wrap", "push[CENTER]push", "push[]10[]25[]10[]push");
         panel.setLayout(layout);
         cmdAdd = new Button();
         cmdAdd.setText("Thêm sản phẩm");
@@ -47,22 +41,6 @@ public class MenuSanPham extends javax.swing.JPanel {
         });
         cmdAdd.setIcon(new ImageIcon(getClass().getResource("/com/view/icon/+.png")));
         panel.add(cmdAdd, "w 75%");
-        
-        cmdBuy = new Button();
-        cmdBuy.setText("Mua xe");
-        cmdBuy.setFont(new java.awt.Font("sansserif", 0, 13));
-        cmdBuy.setForeground(new Color(255, 255, 255));
-        cmdBuy.addActionListener(new ActionListener(){
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                main.showForm(new AdminBuySPCard(main, lcar));
-            }
-            
-        });
-        cmdBuy.setIcon(new ImageIcon(getClass().getResource("/com/view/icon/+.png")));
-        
-        panel.add(cmdBuy, "w 75%");
-        
         findSP = new TextField();
         findSP.setHint("Tìm kiếm");
         findSP.setPrefixIcon(new ImageIcon(getClass().getResource("/com/view/icon/Finding.png")));

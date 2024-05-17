@@ -1,4 +1,4 @@
-package com.controller.event;
+package com.event;
 
 import com.model.ModelLichSuaChua;
 

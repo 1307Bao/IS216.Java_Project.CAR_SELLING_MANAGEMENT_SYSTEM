@@ -1,4 +1,4 @@
-package com.view.dialog;
+package com.dialog;
 
 import com.model.ModelCar;
 import com.view.form.AdminSPForm;
@@ -26,7 +26,7 @@ public class SPDialog extends javax.swing.JPanel {
         lbPrice.setText(model.getGiaBan());
         lbDes.setText(model.getDescription());
         lbTGBH.setText(model.getThoiGianBH() + "");
-        lbNCC.setText(model.getNCC() + "");
+        lbNCC.setText(model.getNCC());
         lbIcon.setIcon(model.getXeImg());
     }
 
